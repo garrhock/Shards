@@ -1,0 +1,92 @@
+# ─────────────────────────────────────────────
+#  Shards — the gated second currency
+# ─────────────────────────────────────────────
+# Money inflates with the season; shards don't. Everything that paces
+# progression (spawners, later: vault rows, KOTH stakes) is priced in shards.
+# Shards enter the economy ONLY through: PvP kills, votes/crates/events
+# (via `shardsadmin give` from console), and nothing else.
+
+database:
+  file: shards.db
+
+earn:
+  kill:
+    # Shards paid to the killer on a PvP kill. Kills are otherwise unpaid
+    # by any plugin on this server, so this stacks with nothing.
+    amount: 10
+    # Minutes before killing the SAME victim pays again (0 = no cooldown).
+    # This is collusion-minting protection (alt/friend kill-trading prints
+    # currency from nothing), not an activity throttle.
+    same-victim-cooldown-minutes: 30
+
+display:
+  symbol: "⧫"
+
+# Action-bar + sound feedback whenever shards are earned (kills, votes, admin give) —
+# mirrors CustomEconomy's sell feedback so both currencies feel the same.
+feedback:
+  sound: BLOCK_AMETHYST_BLOCK_CHIME
+  volume: 1.0
+  pitch: 1.4
+
+# ─────────────────────────────────────────────
+#  Shard Shop (/shardshop)
+# ─────────────────────────────────────────────
+# Purchases run the configured console commands with %player% replaced.
+# Verify the SilkSpawners give syntax on your build before launch
+# (`/silkspawners help` — some builds use the entity name, some the id).
+# Spawner PLACEMENT still requires Warrior rank (silkspawners.place.* node),
+# so buying early is saving, not skipping, the ladder.
+shop:
+  title: "⧫ Shard Shop"
+  rows: 3
+  entries:
+    chicken:
+      slot: 10
+      icon: SPAWNER
+      name: "<white>Chicken Spawner</white>"
+      cost: 250
+      commands:
+        - "silkspawners give %player% CHICKEN 1"
+    pig:
+      slot: 11
+      icon: SPAWNER
+      name: "<white>Pig Spawner</white>"
+      cost: 300
+      commands:
+        - "silkspawners give %player% PIG 1"
+    cow:
+      slot: 12
+      icon: SPAWNER
+      name: "<white>Cow Spawner</white>"
+      cost: 300
+      commands:
+        - "silkspawners give %player% COW 1"
+    zombie:
+      slot: 13
+      icon: SPAWNER
+      name: "<green>Zombie Spawner</green>"
+      cost: 400
+      commands:
+        - "silkspawners give %player% ZOMBIE 1"
+    skeleton:
+      slot: 14
+      icon: SPAWNER
+      name: "<gray>Skeleton Spawner</gray>"
+      cost: 500
+      commands:
+        - "silkspawners give %player% SKELETON 1"
+    blaze:
+      slot: 15
+      icon: SPAWNER
+      name: "<gold>Blaze Spawner</gold>"
+      cost: 1200
+      commands:
+        - "silkspawners give %player% BLAZE 1"
+    iron-golem:
+      slot: 16
+      icon: SPAWNER
+      name: "<aqua>Iron Golem Spawner</aqua>"
+      cost: 3000
+      commands:
+        - "silkspawners give %player% IRON_GOLEM 1"

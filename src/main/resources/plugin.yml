@@ -1,0 +1,29 @@
+name: Shards
+version: '0.1.1'
+main: dev.smpeconomy.shards.ShardsPlugin
+api-version: '1.21'
+description: Gated second currency earned through PvP — prices spawners and progression
+authors: [ SMP ]
+
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  shards:
+    description: View your shard balance
+    usage: /shards
+  shardsadmin:
+    description: Shards admin — give/take/set are the integration surface for votes, crates, and events
+    usage: /shardsadmin <give|take|set|reload> [player] [amount]
+    permission: shards.admin
+  shardshop:
+    description: Open the shard shop
+    usage: /shardshop
+
+permissions:
+  shards.use:
+    description: Use /shards
+    default: true
+  shards.admin:
+    description: Access /shardsadmin
+    default: op
