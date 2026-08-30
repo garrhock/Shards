@@ -103,6 +103,10 @@ With PlaceholderAPI installed:
 | --- | --- |
 | `%shards_balance%` | The player's current shard balance |
 
+## Author
+
+Garrett Hockersmith - [LinkedIn](https://www.linkedin.com/in/garrett-hockersmith/) - [texgeh@gmail.com](mailto:texgeh@gmail.com)
+
 ## License
 
 Released under the [MIT License](LICENSE). Copyright 2026 Garrett Hockersmith.
